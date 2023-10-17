@@ -106,13 +106,13 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 
 function oyun(oyuncu, bilgisayar) {
 	if (oyuncu === bilgisayar) {
-		return "beraberlik";
+		return "Beraberlik";
 	} else if (oyuncu === "Makas" && bilgisayar === "Kağıt") {
-		return "Kazandın";
+		return "Kazandın!";
 	} else if (oyuncu === "Taş" && bilgisayar === "Makas") {
-		return "Kazandın";
+		return "Kazandın!";
 	} else if (oyuncu === "Kağıt" && bilgisayar === "Taş") {
-		return "Kazandın";
+		return "Kazandın!";
 	} else {
 		return "Kaybettin!";
 	}
@@ -128,17 +128,8 @@ const bilgisayarinSecimi = function () {
 		return "Makas";
 	}
 };
-const oyuncuSecimi = function () {
-	let bilgisayarSec = Math.floor(Math.random() * 3);
-	if (bilgisayarSec === 0) {
-		return "Taş";
-	} else if (bilgisayarSec === 1) {
-		return "Kağıt";
-	} else {
-		return "Makas";
-	}
-};
-console.log(oyun(oyuncuSecimi(), bilgisayarinSecimi()));
+
+console.log(oyun("Makas", bilgisayarinSecimi()));
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
 Öncelikle aşağıdakileri yap:
@@ -199,8 +190,11 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/) {
-	/*buraya kodunu yazabilirsin*/
+function cocukSarkisi(sayi) {
+	return `${sayi} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`;
+}
+for (let i = 5; i > 0; i--) {
+	console.log(cocukSarkisi(i));
 }
 
 /* Görev 6 : Not Hesaplayıcı */
